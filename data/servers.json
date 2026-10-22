@@ -1,0 +1,37 @@
+[
+  {
+    "id": "official-node-1",
+    "name": "AetherLyric 官方亞太節點",
+    "url": "https://api.aetherlyric.org",
+    "region": "TW",
+    "description": "官方高可用性旗艦節點，支援完整 Whisper 語音轉錄、TTML 逐字歌詞生成與 yt-dlp 轉碼解析。",
+    "owner": "milk120106",
+    "maintainer_level": "official",
+    "trust_status": "official",
+    "capabilities": [
+      "has_ai",
+      "has_ttml",
+      "has_ytdlp"
+    ],
+    "requires_auth": false,
+    "requires_2fa": false,
+    "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "community-node-hk",
+    "name": "社群香港節點 (Tokyo Mirror)",
+    "url": "https://hk.lyricnode.net",
+    "region": "HK",
+    "description": "社群認證維護節點，提供極速歌詞搜尋檢索與 TTML 雙語對照支援。",
+    "owner": "Community HK Team",
+    "maintainer_level": "maintainer",
+    "trust_status": "verified",
+    "capabilities": [
+      "has_ai",
+      "has_ttml"
+    ],
+    "requires_auth": true,
+    "requires_2fa": false,
+    "signature": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+  }
+]

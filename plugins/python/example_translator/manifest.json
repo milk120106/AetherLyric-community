@@ -1,0 +1,13 @@
+{
+  "id": "example_translator",
+  "name": "範例 Python 歌詞翻譯器",
+  "version": "1.0.0",
+  "author": "milk120106",
+  "category": "translator",
+  "permissions": [
+    "network"
+  ],
+  "license": "MIT",
+  "entrypoint": "main.py",
+  "description": "AetherLyric 官方範例翻譯插件，示範接收歌詞行進行雙語時間軸翻譯。"
+}

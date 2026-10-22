@@ -1,0 +1,30 @@
+[
+  {
+    "id": "example_source",
+    "name": "範例 JSON 歌詞來源",
+    "category": "lyrics_source",
+    "author": "milk120106",
+    "maintainer_level": "official",
+    "trust_status": "official",
+    "source_url": "https://raw.githubusercontent.com/milk120106/AetherLyric-community/main/plugins/json/example_source.json",
+    "manifest_url": "",
+    "version": "1.0.0",
+    "risk_level": "low",
+    "license": "MIT",
+    "description": "標準宣告式 JSON 歌詞來源範例，示範搜尋端點與 JSONPath 欄位擷取。"
+  },
+  {
+    "id": "example_translator",
+    "name": "範例 Python 歌詞翻譯器",
+    "category": "translator",
+    "author": "milk120106",
+    "maintainer_level": "official",
+    "trust_status": "official",
+    "source_url": "https://raw.githubusercontent.com/milk120106/AetherLyric-community/main/plugins/python/example_translator/main.py",
+    "manifest_url": "https://raw.githubusercontent.com/milk120106/AetherLyric-community/main/plugins/python/example_translator/manifest.json",
+    "version": "1.0.0",
+    "risk_level": "low",
+    "license": "MIT",
+    "description": "標準 Python 翻譯擴充外掛範例，實作 translate() 雙語時間軸轉換。"
+  }
+]

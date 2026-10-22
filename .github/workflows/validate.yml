@@ -1,0 +1,48 @@
+name: Validate Community Data and Plugins
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # 每日 UTC 00:00 (台灣時間 08:00) 自動執行排程安全掃描
+    - cron: '0 0 * * *'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate JSON Syntax
+        run: |
+          python -c "
+          import json, glob
+          files = ['data/servers.json', 'data/plugins.json'] + glob.glob('plugins/**/*.json', recursive=True)
+          for f in files:
+              try:
+                  with open(f, 'r', encoding='utf-8') as fp:
+                      json.load(fp)
+                  print(f'[OK] Valid JSON: {f}')
+              except Exception as e:
+                  print(f'[ERROR] Invalid JSON in {f}: {e}')
+                  exit(1)
+          "
+
+      - name: Run Plugin Security Scan
+        run: |
+          python scripts/scan_plugins.py
+
+      - name: Check for Uncommitted Changes
+        run: |
+          git status --porcelain
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "[!] Security scan detected suspicious plugins and updated data/plugins.json."
+          fi

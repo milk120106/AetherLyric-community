@@ -1,0 +1,23 @@
+{
+  "id": "example_source",
+  "name": "範例 JSON 歌詞來源",
+  "version": "1.0.0",
+  "author": "milk120106",
+  "license": "MIT",
+  "description": "標準宣告式 JSON 歌詞源，支援歌名與歌手搜尋並擷取 LRC 內容。",
+  "search_url": "https://api.example.com/search?title={title}&artist={artist}",
+  "method": "GET",
+  "headers": {
+    "User-Agent": "AetherLyric-Plugin/1.0.0",
+    "Accept": "application/json"
+  },
+  "response_type": "json",
+  "extractor": {
+    "list_path": "data.results",
+    "title_path": "track_name",
+    "artist_path": "artist_name",
+    "lrc_path": "lyrics.lrc_text",
+    "duration_path": "duration_ms"
+  },
+  "update_url": "https://raw.githubusercontent.com/milk120106/AetherLyric-community/main/plugins/json/example_source.json"
+}
